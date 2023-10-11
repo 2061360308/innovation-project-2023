@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mina-lazy-image": "^2.0.1",
+    "tdesign-miniprogram": "^1.2.3"
+  }
+}

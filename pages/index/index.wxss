@@ -1,0 +1,73 @@
+/**index.wxss**/
+
+/* .top-tabbar{
+    left: 0px;
+    position:absolute;
+} */
+
+/* .container{
+    position: relative;
+    width: 100%;
+    /* background-color: blue; */
+/* } */
+
+
+
+.top{
+    position: relative;
+    width: 100%;
+}
+
+
+.top .screen-swiper{
+    /* position: absolute;
+    top: 0; */
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    top: 0;
+    /* padding:20rpx; */
+}
+
+.radius-left-bottom{
+    border-radius: 50% 8% / 10% 40%;
+}
+
+.top .search-form{
+    position: absolute;
+    width: 100%;
+    /* height: 500rpx; */
+    z-index: 1000;
+    top: 0;
+    padding-top: 100rpx;
+}
+
+.main{
+    position: relative;
+    top: 550rpx;
+}
+
+.waterfall{
+    position: absolute;
+}
+
+.waterfall-item{
+    width: 100%;
+}
+
+/* 固定图片宽度 */
+.waterfall-item image{
+    width: 100%;
+}
+
+.cu-avatar.xs {
+    width: 30rpx;
+    height: 30rpx;
+    font-size: 1em;
+}
+
+/* .main{
+    position: absolute;
+    top: 100rpx;
+    width: 100%;
+} */

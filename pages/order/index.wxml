@@ -1,0 +1,48 @@
+<!--pages/order/index.wxml-->
+<cu-custom class="top-tabbar" bgColor="bg-gradual-blue" isBack="{{false}}">
+    <view slot="content">订单</view>
+</cu-custom>
+
+<view class="order-item padding-lg margin-sm radius-xl" wx:for="{{analogData}}">
+  <view class="cf padding-bottom-sm">
+      <view class="fl">
+        <view class="flex justify-start">
+          <view class="cu-avatar round sm" style="background-image:url({{item.store.avatar}});"></view>
+          <view class="text-lg text-bold padding-left-sm">{{item.store.name}}</view>
+        </view>
+      </view>
+      <view class="fr">
+        <view class="text-gray">{{item.status}}</view>
+      </view>
+    </view>
+  <view class="flex align-start">
+    <view class="flex">
+      <view class="flex-sub padding-bottom-sm padding-right-sm">
+        <image class="radius" src="{{item.cover}}" mode="aspectFill" style="width: 130rpx;height: 130rpx;"></image>
+      </view>
+      <view class="flex-treble">
+        <!--Order information-->
+        <view class="flex align-start padding-bottom-xs">
+          <view class="text-sm text-gray">{{item.information}}</view>
+        </view>
+        <!--Order datetime-->
+        <view class="flex align-start padding-bottom-xs">
+          <view class="flex justify-start">
+            <view class="text-sm text-gray">{{item.startTime}}</view>
+            <text decode="{{true}}" class="text-sm text-gray">&nbsp;&nbsp;-&nbsp;&nbsp;</text>
+            <view class="text-sm text-gray">{{item.endTime}}</view>
+          </view>
+        </view>
+        <view class="flex align-start">
+          <text decode="{{true}}" class="text-sm text-gray">总价:&nbsp;&nbsp;</text>
+          <view class="text-sm text-gray text-price">{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="flex justify-end">
+    <view class="solid-blue radius-xl padding-xs margin-right-sm text-sm">删除订单</view>
+    <view class="solid-blue radius-xl padding-xs margin-right-sm text-sm">再次预订</view>
+    <view class="solid-blue radius-xl padding-xs margin-right-xs text-sm">退款进度</view>
+  </view>
+</view>

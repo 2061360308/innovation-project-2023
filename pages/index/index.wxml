@@ -1,0 +1,105 @@
+<!--index.wxml-->
+<cu-custom class="top-tabbar" bgColor="bg-gradual-blue" isBack="{{false}}">
+    <view slot="content">美团酒店</view>
+</cu-custom>
+
+<view class="top">
+    <swiper class="screen-swiper round-dot radius-left-bottom" indicator-dots="{{false}}" circular="true" autoplay="true" interval="5000" duration="500">
+        <swiper-item class="radius-left-bottom" wx:for="{{swiperList}}" wx:key="item">
+            <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+            <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+        </swiper-item>
+    </swiper>
+
+
+    <view class="cu-card case padding-xxl search-form">
+        <view class="cu-item shadow">
+            <scroll-view scroll-x class="bg-white nav">
+                <view class="flex text-center">
+                    <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{tabItem}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+                        {{item}}
+                    </view>
+                </view>
+            </scroll-view>
+            <view class="cu-list">
+                <view class="cu-item">
+                    <form>
+                        <view class="cu-form-group margin-top">
+                            <view class="title">邮件</view>
+                            <input placeholder="两字短标题"></input>
+                        </view>
+                        <view class="cu-form-group">
+                            <view class="title">输入框</view>
+                            <input placeholder="三字标题"></input>
+                        </view>
+                        <view class="cu-form-group">
+                            <view class="title">收货地址</view>
+                            <input placeholder="统一标题的宽度"></input>
+                        </view>
+                    </form>
+                </view>
+
+                <!-- <view class="action">
+                        <button class="cu-btn bg-green shadow-blur round">搜索</button>
+                    </view> -->
+            </view>
+        </view>
+    </view>
+</view>
+
+
+
+
+<view class="main">
+    <!-- <view wx:for="{{200}}">{{index}}</view> -->
+    <!--瀑布流-->
+    <view class="padding-sm waterfall flex">
+        <view class="margin-right-xs flex-sub" id="waterfall-left">
+            <view id="item{{item.id}}" wx:for="{{leftData}}" wx:key="item">
+                <view class="cu-card case waterfall-item margin-bottom-sm">
+                    <view class="cu-item">
+                        <mina-lazy-image src="{{item.image}}" mode="widthFix"></mina-lazy-image>
+                        <view class="information">
+                            <view class="text-bold margin-xs">{{item.title}}</view>
+                            <view class="margin-xs">
+                                <text class="text-price text-bold text-xl text-red">{{item.price}}</text>
+                                <!-- <text>  </text> -->
+                                <text class="text-gray text-sm margin-left-xs">{{item.desire}}人想要</text>
+                            </view>
+                            <view class="margin-xs">
+                                <view class="cu-avatar xs round" style="background-image:url({{item.user.avatar}});"></view>
+                                <text class="text-gray text-sm margin-left-xs">{{item.user.name}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="margin-left-xs flex-sub" id="waterfall-right">
+            <view id="item{{item.id}}" wx:for="{{rightData}}" wx:key="item">
+                <view class=" cu-card case waterfall-item margin-bottom-sm">
+                    <view class="cu-item">
+                        <mina-lazy-image src="{{item.image}}" mode="widthFix"></mina-lazy-image>
+                        <view class="information">
+                            <view class="text-bold margin-xs">{{item.title}}</view>
+                            <view class="margin-xs">
+                                <text class="text-price text-bold text-xl text-red">{{item.price}}</text>
+                                <!-- <text>  </text> -->
+                                <text class="text-gray text-sm margin-left-xs">{{item.desire}}人想要</text>
+                            </view>
+                            <view class="margin-xs">
+                                <view class="cu-avatar xs round" style="background-image:url({{item.user.avatar}});"></view>
+                                <text class="text-gray text-sm margin-left-xs">{{item.user.name}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view style="height:80px">
+    <!--tabbar占位-->
+</view>
