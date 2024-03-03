@@ -1,20 +1,32 @@
 <!--pages/order/index.wxml-->
 <cu-custom class="top-tabbar" bgColor="bg-gradual-blue" isBack="{{false}}">
-    <view slot="content">订单</view>
+  <view slot="content">订单</view>
 </cu-custom>
+
+<scroll-view scroll-x class="bg-white nav text-center">
+  <view class="cu-item {{item=='住宿'?'text-blue cur':''}}" wx:for="{{['农产品','住宿']}}">
+    {{item}}
+  </view>
+</scroll-view>
+
+<view class="fitter margin">
+  <view class="cu-tag bg-red radius">全部</view>
+  <view class="cu-tag bg-red light radius">待支付</view>
+  <view class="cu-tag bg-red light radius">已发货</view>
+</view>
 
 <view class="order-item padding-lg margin-sm radius-xl" wx:for="{{analogData}}">
   <view class="cf padding-bottom-sm">
-      <view class="fl">
-        <view class="flex justify-start">
-          <view class="cu-avatar round sm" style="background-image:url({{item.store.avatar}});"></view>
-          <view class="text-lg text-bold padding-left-sm">{{item.store.name}}</view>
-        </view>
-      </view>
-      <view class="fr">
-        <view class="text-gray">{{item.status}}</view>
+    <view class="fl">
+      <view class="flex justify-start">
+        <view class="cu-avatar round sm" style="background-image:url({{item.store.avatar}});"></view>
+        <view class="text-lg text-bold padding-left-sm">{{item.store.name}}</view>
       </view>
     </view>
+    <view class="fr">
+      <view class="text-gray">{{item.status}}</view>
+    </view>
+  </view>
   <view class="flex align-start">
     <view class="flex">
       <view class="flex-sub padding-bottom-sm padding-right-sm">

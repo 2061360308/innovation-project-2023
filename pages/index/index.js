@@ -17,7 +17,7 @@ Page({
         currentTagIndex: 0,
         filterTagHeight: app.globalData.CustomBar + (100 / app.globalData.pixelRatio),
         TabCur: 0,
-        tabItem: ["国内 海外", "假日精选", "钟点房", "民宿"],
+        tabItem: ["国内", "假日精选", "钟点房", "民宿"],
         swiperCurrent: 0,
         swiperList: [{
             id: 0,

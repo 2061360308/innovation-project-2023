@@ -27,7 +27,7 @@
             },
             {
                 "pagePath": "pages/record/index",
-                "text": "看过/收藏",
+                "text": "住宿",
                 "iconPath": "res/img/record.png",
                 "selectedIconPath": "res/img/record_select.png"
             },

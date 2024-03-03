@@ -1,4 +1,7 @@
 /* pages/order/index.wxss */
+.fitter{
+  
+}
 .order-item{
   background-color: #fff;
 }

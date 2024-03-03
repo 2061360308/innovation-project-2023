@@ -44,7 +44,7 @@
 
 .main{
     position: relative;
-    top: 550rpx;
+    top: 350rpx;
 }
 
 .waterfall{
